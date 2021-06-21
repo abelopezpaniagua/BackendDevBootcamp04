@@ -1,0 +1,16 @@
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\bin\Debug\net5.0\VariableDeclaration.exe
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\bin\Debug\net5.0\VariableDeclaration.deps.json
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\bin\Debug\net5.0\VariableDeclaration.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\bin\Debug\net5.0\VariableDeclaration.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\bin\Debug\net5.0\VariableDeclaration.dll
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\bin\Debug\net5.0\ref\VariableDeclaration.dll
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\bin\Debug\net5.0\VariableDeclaration.pdb
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\obj\Debug\net5.0\VariableDeclaration.csproj.AssemblyReference.cache
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\obj\Debug\net5.0\VariableDeclaration.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\obj\Debug\net5.0\VariableDeclaration.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\obj\Debug\net5.0\VariableDeclaration.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\obj\Debug\net5.0\VariableDeclaration.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\obj\Debug\net5.0\VariableDeclaration.dll
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\obj\Debug\net5.0\ref\VariableDeclaration.dll
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\obj\Debug\net5.0\VariableDeclaration.pdb
+C:\netProjects\BackendDevBootcamp04\VariableDeclaration\VariableDeclaration\obj\Debug\net5.0\VariableDeclaration.genruntimeconfig.cache
