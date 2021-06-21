@@ -29,6 +29,14 @@ namespace VariableDeclaration
             Console.WriteLine($"the value of {nameof(integer9)} with type: {integer9.GetType()} is: {integer9}");
             Console.WriteLine($"the value of {nameof(integer10)} with type: {integer10.GetType()} is: {integer10}");
             Console.WriteLine($"the value of {nameof(integer11)} with type: {integer11.GetType()} is: {integer11}");
+
+            decimal decimalNumber = 3.141592653589793238M;
+            double doubleNumber = 1.60217657;
+            decimal decimalNumber2 = 7.8184261974584555216535342341M;
+
+            Console.WriteLine($"the value of {nameof(decimalNumber)} with type: {decimalNumber.GetType()} is: {decimalNumber}");
+            Console.WriteLine($"the value of {nameof(doubleNumber)} with type: {doubleNumber.GetType()} is: {doubleNumber}");
+            Console.WriteLine($"the value of {nameof(decimalNumber2)} with type: {decimalNumber2.GetType()} is: {decimalNumber2}");
         }
     }
 }
