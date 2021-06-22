@@ -1,0 +1,15 @@
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\bin\Debug\net5.0\NullablesExercise.exe
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\bin\Debug\net5.0\NullablesExercise.deps.json
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\bin\Debug\net5.0\NullablesExercise.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\bin\Debug\net5.0\NullablesExercise.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\bin\Debug\net5.0\NullablesExercise.dll
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\bin\Debug\net5.0\ref\NullablesExercise.dll
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\bin\Debug\net5.0\NullablesExercise.pdb
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\obj\Debug\net5.0\NullablesExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\obj\Debug\net5.0\NullablesExercise.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\obj\Debug\net5.0\NullablesExercise.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\obj\Debug\net5.0\NullablesExercise.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\obj\Debug\net5.0\NullablesExercise.dll
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\obj\Debug\net5.0\ref\NullablesExercise.dll
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\obj\Debug\net5.0\NullablesExercise.pdb
+C:\netProjects\BackendDevBootcamp04\NullablesExercise\NullablesExercise\obj\Debug\net5.0\NullablesExercise.genruntimeconfig.cache
