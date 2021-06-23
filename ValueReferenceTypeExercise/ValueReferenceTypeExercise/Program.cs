@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 
 namespace ValueReferenceTypeExercise
 {
@@ -51,8 +50,6 @@ namespace ValueReferenceTypeExercise
 
             Console.WriteLine(n1);
             Console.WriteLine(n2);
-
-            p1 = new Point();
         }
     }
 }
