@@ -5,7 +5,7 @@ namespace ValueReferenceTypeExercise
 {
     class Program
     {
-        public class DetailedInteger : ICloneable
+        public struct DetailedInteger
         {
             public int Number { get; set; }
             public List<string> Details { get; set; }
@@ -30,11 +30,6 @@ namespace ValueReferenceTypeExercise
             public override string ToString()
             {
                 return $"{Number} [{ string.Join(',', Details) }]";
-            }
-
-            public object Clone()
-            {
-                return this.MemberwiseClone();
             }
         }
 

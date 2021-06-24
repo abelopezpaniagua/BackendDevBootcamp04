@@ -13,3 +13,4 @@ C:\netProjects\BackendDevBootcamp04\ValueReferenceTypeExercise\ValueReferenceTyp
 C:\netProjects\BackendDevBootcamp04\ValueReferenceTypeExercise\ValueReferenceTypeExercise\obj\Debug\net5.0\ref\ValueReferenceTypeExercise.dll
 C:\netProjects\BackendDevBootcamp04\ValueReferenceTypeExercise\ValueReferenceTypeExercise\obj\Debug\net5.0\ValueReferenceTypeExercise.pdb
 C:\netProjects\BackendDevBootcamp04\ValueReferenceTypeExercise\ValueReferenceTypeExercise\obj\Debug\net5.0\ValueReferenceTypeExercise.genruntimeconfig.cache
+C:\netProjects\BackendDevBootcamp04\ValueReferenceTypeExercise\ValueReferenceTypeExercise\obj\Debug\net5.0\ValueReferenceTypeExercise.csproj.AssemblyReference.cache
