@@ -1,0 +1,15 @@
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\bin\Debug\net5.0\GenericsExercise.exe
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\bin\Debug\net5.0\GenericsExercise.deps.json
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\bin\Debug\net5.0\GenericsExercise.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\bin\Debug\net5.0\GenericsExercise.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\bin\Debug\net5.0\GenericsExercise.dll
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\bin\Debug\net5.0\ref\GenericsExercise.dll
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\bin\Debug\net5.0\GenericsExercise.pdb
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\obj\Debug\net5.0\GenericsExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\obj\Debug\net5.0\GenericsExercise.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\obj\Debug\net5.0\GenericsExercise.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\obj\Debug\net5.0\GenericsExercise.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\obj\Debug\net5.0\GenericsExercise.dll
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\obj\Debug\net5.0\ref\GenericsExercise.dll
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\obj\Debug\net5.0\GenericsExercise.pdb
+C:\netProjects\BackendDevBootcamp04\GenericsExercise\GenericsExercise\obj\Debug\net5.0\GenericsExercise.genruntimeconfig.cache
