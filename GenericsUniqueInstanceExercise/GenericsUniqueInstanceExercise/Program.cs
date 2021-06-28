@@ -6,7 +6,8 @@ namespace GenericsUniqueInstanceExercise
     {
         class UniqueInstance<T> where T : new()
         {
-            public static T Unique { get; set; } = new T();
+            private static T unique;
+            public static T Unique => unique == null ? unique = new() : unique;
 
         }
 
