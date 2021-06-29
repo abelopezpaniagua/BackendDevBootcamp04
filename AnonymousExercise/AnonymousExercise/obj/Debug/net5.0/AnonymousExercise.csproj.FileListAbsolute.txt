@@ -1,0 +1,16 @@
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\obj\Debug\net5.0\AnonymousExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\obj\Debug\net5.0\AnonymousExercise.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\obj\Debug\net5.0\AnonymousExercise.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\obj\Debug\net5.0\AnonymousExercise.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\bin\Debug\net5.0\AnonymousExercise.exe
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\bin\Debug\net5.0\AnonymousExercise.deps.json
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\bin\Debug\net5.0\AnonymousExercise.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\bin\Debug\net5.0\AnonymousExercise.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\bin\Debug\net5.0\AnonymousExercise.dll
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\bin\Debug\net5.0\ref\AnonymousExercise.dll
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\bin\Debug\net5.0\AnonymousExercise.pdb
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\obj\Debug\net5.0\AnonymousExercise.csproj.AssemblyReference.cache
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\obj\Debug\net5.0\AnonymousExercise.dll
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\obj\Debug\net5.0\ref\AnonymousExercise.dll
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\obj\Debug\net5.0\AnonymousExercise.pdb
+C:\netProjects\BackendDevBootcamp04\AnonymousExercise\AnonymousExercise\obj\Debug\net5.0\AnonymousExercise.genruntimeconfig.cache
