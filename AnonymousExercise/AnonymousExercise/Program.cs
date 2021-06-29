@@ -23,6 +23,8 @@ namespace AnonymousExercise
             Console.WriteLine(string.Format("{0} {1}", obj.Name, obj.EmailID));
         }
 
-        static T Cast<T>(object obj, T type) { return (T)obj; }
+        static T Cast<T>(object obj, T type) { 
+            return (T)obj; 
+        }
     }
 }
