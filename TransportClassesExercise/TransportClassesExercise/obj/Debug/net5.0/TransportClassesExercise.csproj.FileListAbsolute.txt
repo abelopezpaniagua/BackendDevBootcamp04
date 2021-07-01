@@ -1,0 +1,16 @@
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\bin\Debug\net5.0\TransportClassesExercise.exe
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\bin\Debug\net5.0\TransportClassesExercise.deps.json
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\bin\Debug\net5.0\TransportClassesExercise.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\bin\Debug\net5.0\TransportClassesExercise.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\bin\Debug\net5.0\TransportClassesExercise.dll
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\bin\Debug\net5.0\ref\TransportClassesExercise.dll
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\bin\Debug\net5.0\TransportClassesExercise.pdb
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\obj\Debug\net5.0\TransportClassesExercise.csproj.AssemblyReference.cache
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\obj\Debug\net5.0\TransportClassesExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\obj\Debug\net5.0\TransportClassesExercise.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\obj\Debug\net5.0\TransportClassesExercise.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\obj\Debug\net5.0\TransportClassesExercise.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\obj\Debug\net5.0\TransportClassesExercise.dll
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\obj\Debug\net5.0\ref\TransportClassesExercise.dll
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\obj\Debug\net5.0\TransportClassesExercise.pdb
+C:\netProjects\BackendDevBootcamp04\TransportClassesExercise\TransportClassesExercise\obj\Debug\net5.0\TransportClassesExercise.genruntimeconfig.cache
