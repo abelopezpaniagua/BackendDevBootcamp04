@@ -1,0 +1,16 @@
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\bin\Debug\net5.0\DelegatesExercise.exe
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\bin\Debug\net5.0\DelegatesExercise.deps.json
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\bin\Debug\net5.0\DelegatesExercise.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\bin\Debug\net5.0\DelegatesExercise.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\bin\Debug\net5.0\DelegatesExercise.dll
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\bin\Debug\net5.0\ref\DelegatesExercise.dll
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\bin\Debug\net5.0\DelegatesExercise.pdb
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\obj\Debug\net5.0\DelegatesExercise.csproj.AssemblyReference.cache
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\obj\Debug\net5.0\DelegatesExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\obj\Debug\net5.0\DelegatesExercise.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\obj\Debug\net5.0\DelegatesExercise.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\obj\Debug\net5.0\DelegatesExercise.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\obj\Debug\net5.0\DelegatesExercise.dll
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\obj\Debug\net5.0\ref\DelegatesExercise.dll
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\obj\Debug\net5.0\DelegatesExercise.pdb
+C:\netProjects\BackendDevBootcamp04\DelegatesExercise\DelegatesExercise\obj\Debug\net5.0\DelegatesExercise.genruntimeconfig.cache

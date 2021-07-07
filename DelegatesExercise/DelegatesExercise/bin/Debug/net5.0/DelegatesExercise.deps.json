@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "DelegatesExercise/1.0.0": {
+        "runtime": {
+          "DelegatesExercise.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DelegatesExercise/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
