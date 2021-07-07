@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DelegatesExercise
 {
-    public enum Operation { Sum, Substract, Multiply }
+    public enum Operation { Sum, Substract, Multiply, Square }
 
     public class Expression
     {
@@ -47,7 +47,7 @@ namespace DelegatesExercise
                 return this.operations[operation]();
             }
 
-            return -1;
+            throw new InvalidOperationException();
         }
     }
 }
