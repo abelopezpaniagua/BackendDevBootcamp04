@@ -1,0 +1,16 @@
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\bin\Debug\net5.0\ExtensionMethodsExercise.exe
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\bin\Debug\net5.0\ExtensionMethodsExercise.deps.json
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\bin\Debug\net5.0\ExtensionMethodsExercise.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\bin\Debug\net5.0\ExtensionMethodsExercise.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\bin\Debug\net5.0\ExtensionMethodsExercise.dll
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\bin\Debug\net5.0\ref\ExtensionMethodsExercise.dll
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\bin\Debug\net5.0\ExtensionMethodsExercise.pdb
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\obj\Debug\net5.0\ExtensionMethodsExercise.csproj.AssemblyReference.cache
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\obj\Debug\net5.0\ExtensionMethodsExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\obj\Debug\net5.0\ExtensionMethodsExercise.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\obj\Debug\net5.0\ExtensionMethodsExercise.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\obj\Debug\net5.0\ExtensionMethodsExercise.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\obj\Debug\net5.0\ExtensionMethodsExercise.dll
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\obj\Debug\net5.0\ref\ExtensionMethodsExercise.dll
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\obj\Debug\net5.0\ExtensionMethodsExercise.pdb
+C:\netProjects\BackendDevBootcamp04\ExtensionMethodsExercise\ExtensionMethodsExercise\obj\Debug\net5.0\ExtensionMethodsExercise.genruntimeconfig.cache
