@@ -13,3 +13,4 @@ C:\netProjects\BackendDevBootcamp04\LINQExtensionMethodsExercise\LINQExtensionMe
 C:\netProjects\BackendDevBootcamp04\LINQExtensionMethodsExercise\LINQExtensionMethodsExercise\obj\Debug\net5.0\ref\LINQExtensionMethodsExercise.dll
 C:\netProjects\BackendDevBootcamp04\LINQExtensionMethodsExercise\LINQExtensionMethodsExercise\obj\Debug\net5.0\LINQExtensionMethodsExercise.pdb
 C:\netProjects\BackendDevBootcamp04\LINQExtensionMethodsExercise\LINQExtensionMethodsExercise\obj\Debug\net5.0\LINQExtensionMethodsExercise.genruntimeconfig.cache
+C:\netProjects\BackendDevBootcamp04\LINQExtensionMethodsExercise\LINQExtensionMethodsExercise\obj\Debug\net5.0\LINQExtensionMethodsExercise.csproj.AssemblyReference.cache

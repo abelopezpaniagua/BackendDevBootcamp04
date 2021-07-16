@@ -42,7 +42,7 @@ namespace System.Linq
             return sequence.Select(selector).Mode();
         }
 
-        public static int? LessCommon(this IEnumerable<int?> sequence)
+        public static int? UnMode(this IEnumerable<int?> sequence)
         {
             var lessCommon = sequence
                 .GroupBy(item => item)
@@ -53,9 +53,9 @@ namespace System.Linq
             return lessCommon;
         }
 
-        public static int? LessCommon<T>(this IEnumerable<T> sequence, Func<T, int?> selector)
+        public static int? UnMode<T>(this IEnumerable<T> sequence, Func<T, int?> selector)
         {
-            return sequence.Select(selector).LessCommon();
+            return sequence.Select(selector).UnMode();
         }
     }
 }

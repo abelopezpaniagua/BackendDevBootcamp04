@@ -27,7 +27,7 @@ namespace LINQExtensionMethodsExercise
             Console.WriteLine($"Average: {products.Average(p => p.Price)}");
             Console.WriteLine($"Median: {products.Median(p => p.Price)}");
             Console.WriteLine($"Mode: {products.Mode(p => p.Price)}");
-            Console.WriteLine($"Less Common: {products.LessCommon(p => p.Price)}");
+            Console.WriteLine($"Less Common: {products.UnMode(p => p.Price)}");
         }
     }
 
