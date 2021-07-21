@@ -1,0 +1,12 @@
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\bin\Release\net5.0\MyCustomLibrary.deps.json
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\bin\Release\net5.0\MyCustomLibrary.dll
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\bin\Release\net5.0\ref\MyCustomLibrary.dll
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\bin\Release\net5.0\MyCustomLibrary.pdb
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\obj\Release\net5.0\MyCustomLibrary.csproj.AssemblyReference.cache
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\obj\Release\net5.0\MyCustomLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\obj\Release\net5.0\MyCustomLibrary.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\obj\Release\net5.0\MyCustomLibrary.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\obj\Release\net5.0\MyCustomLibrary.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\obj\Release\net5.0\MyCustomLibrary.dll
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\obj\Release\net5.0\ref\MyCustomLibrary.dll
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\MyCustomLibrary\obj\Release\net5.0\MyCustomLibrary.pdb

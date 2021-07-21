@@ -1,0 +1,16 @@
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\bin\Release\net5.0\ReflectionExercise.exe
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\bin\Release\net5.0\ReflectionExercise.deps.json
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\bin\Release\net5.0\ReflectionExercise.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\bin\Release\net5.0\ReflectionExercise.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\bin\Release\net5.0\ReflectionExercise.dll
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\bin\Release\net5.0\ref\ReflectionExercise.dll
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\bin\Release\net5.0\ReflectionExercise.pdb
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\obj\Release\net5.0\ReflectionExercise.csproj.AssemblyReference.cache
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\obj\Release\net5.0\ReflectionExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\obj\Release\net5.0\ReflectionExercise.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\obj\Release\net5.0\ReflectionExercise.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\obj\Release\net5.0\ReflectionExercise.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\obj\Release\net5.0\ReflectionExercise.dll
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\obj\Release\net5.0\ref\ReflectionExercise.dll
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\obj\Release\net5.0\ReflectionExercise.pdb
+C:\netProjects\BackendDevBootcamp04\ReflectionExercise\ReflectionExercise\obj\Release\net5.0\ReflectionExercise.genruntimeconfig.cache
