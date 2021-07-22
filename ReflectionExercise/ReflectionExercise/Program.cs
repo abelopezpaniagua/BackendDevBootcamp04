@@ -12,27 +12,27 @@ namespace ReflectionExercise
             string stringVar = "my custom string";
 
             Type stringType = stringVar.GetType();
-            FieldInvestigation(stringType);
-            MethodInvestigation(stringType);
-            PropertiesInvestigation(stringType);
+            FieldInformation(stringType);
+            MethodInformation(stringType);
+            PropertiesInformation(stringType);
 
             //DateTime Example
             Console.WriteLine("\n\n\nDATETIME EXAMPLE");
             DateTime dateTimeVar = DateTime.Now;
 
             Type dateTimeType = dateTimeVar.GetType();
-            FieldInvestigation(dateTimeType);
-            MethodInvestigation(dateTimeType);
-            PropertiesInvestigation(dateTimeType);
+            FieldInformation(dateTimeType);
+            MethodInformation(dateTimeType);
+            PropertiesInformation(dateTimeType);
 
             //Custom Class Example
             Console.WriteLine("\n\n\nCUSTOM CLASS EXAMPLE");
             Product myNewClass = new(1, "my class object description", 200.0M);
 
             Type myNewClassType = myNewClass.GetType();
-            FieldInvestigation(myNewClassType);
-            MethodInvestigation(myNewClassType);
-            PropertiesInvestigation(myNewClassType);
+            FieldInformation(myNewClassType);
+            MethodInformation(myNewClassType);
+            PropertiesInformation(myNewClassType);
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n\nMore Class INFO");
@@ -95,7 +95,7 @@ namespace ReflectionExercise
 
 
         //Method for explore fields of a type
-        static void FieldInvestigation(Type type)
+        static void FieldInformation(Type type)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("************ Fields ***********");
@@ -109,7 +109,7 @@ namespace ReflectionExercise
         }
 
         //Method for explore methods of a type
-        static void MethodInvestigation(Type type)
+        static void MethodInformation(Type type)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("************ Methods ***********");
@@ -123,7 +123,7 @@ namespace ReflectionExercise
         }
 
         //Method for explore properties of a type
-        static void PropertiesInvestigation(Type type)
+        static void PropertiesInformation(Type type)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("************ Properties ***********");
