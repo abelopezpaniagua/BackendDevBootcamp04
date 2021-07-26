@@ -8,12 +8,12 @@ namespace OutlookClientExercise
 {
     public class SMPTClient : IDisposable
     {
-        private SMPTServer _server;
+        public SMPTServer Server;
         private List<Folder> _folders;
 
         public SMPTClient()
         {
-            _server = new("Default SMTP Server", "DefaultServer", "admin", "admin");
+            Server = new("Default SMTP Server", "DefaultServer", "admin", "admin");
 
             Initialize();
         }
@@ -52,7 +52,7 @@ namespace OutlookClientExercise
 
         public void Dispose()
         {
-            this._server.Dispose();
+            this.Server.Dispose();
         }
     }
 }

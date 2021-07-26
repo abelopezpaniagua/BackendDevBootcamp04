@@ -13,7 +13,7 @@ namespace OutlookClientExercise
             do
             {
                 string menuInfo = "Menu \n1.Configure SMTP Server \n2.Send Message \n3.List Folders \n4.Add Folder" + 
-                    "\n5.Rename Folder \n6.Remove Folder \n7.Close Application \nPlease select an option:";
+                    "\n5.Rename Folder \n6.Remove Folder \n7.Close Application \nPlease select an option";
 
                 clientActionChoice = ConsoleManager
                     .GetUserInputWithPreInformation<ClientActionChoice>(menuInfo);
@@ -21,6 +21,23 @@ namespace OutlookClientExercise
                 switch (clientActionChoice)
                 {
                     case ClientActionChoice.ConfigureSMTP:
+
+                        ConsoleManager.ShowInfo("Actual SMTP Config: ");
+                        ConsoleManager.ShowInfo(client.Server.GetInfo());
+
+                        string serverDescription = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Server Description");
+                        string serverName = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Server Name");
+                        string serverPort = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Port (Default: 537)");
+                        string serverUsername = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Username");
+                        string serverPassword = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Password");
+
+                        bool serverUpdated = client.Server.Update(
+                            serverDescription, serverName, serverUsername, serverPassword, !string.IsNullOrEmpty(serverPort) ? int.Parse(serverPort) : null);
+
+                        if (serverUpdated)
+                            ConsoleManager.ShowSuccess("SMTP Server Config successfully updated!");
+                        else
+                            ConsoleManager.ShowError("Error updating SMTP Server Config");
 
                         break;
 
@@ -50,7 +67,11 @@ namespace OutlookClientExercise
                         break;
                 }
 
-                Console.Clear();
+                if (clientActionChoice != ClientActionChoice.CloseApplication)
+                {
+                    Console.ReadKey();
+                    Console.Clear();
+                }
 
             } while (clientActionChoice != ClientActionChoice.CloseApplication);
         }
