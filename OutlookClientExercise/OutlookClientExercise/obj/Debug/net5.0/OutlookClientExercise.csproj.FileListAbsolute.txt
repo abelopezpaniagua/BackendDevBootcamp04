@@ -1,0 +1,16 @@
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.csproj.AssemblyReference.cache
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\bin\Debug\net5.0\OutlookClientExercise.exe
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\bin\Debug\net5.0\OutlookClientExercise.deps.json
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\bin\Debug\net5.0\OutlookClientExercise.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\bin\Debug\net5.0\OutlookClientExercise.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\bin\Debug\net5.0\OutlookClientExercise.dll
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\bin\Debug\net5.0\ref\OutlookClientExercise.dll
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\bin\Debug\net5.0\OutlookClientExercise.pdb
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.dll
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\ref\OutlookClientExercise.dll
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.pdb
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.genruntimeconfig.cache
