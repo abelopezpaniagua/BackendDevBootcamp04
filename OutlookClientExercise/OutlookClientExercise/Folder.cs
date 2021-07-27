@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace OutlookClientExercise
 {
-    class Folder
+    public class Folder
     {
         private List<Message> _messages;
         private string _name;
+
+        public string Name => _name;
 
         public Folder(string name)
         {

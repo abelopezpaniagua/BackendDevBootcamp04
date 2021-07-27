@@ -50,6 +50,31 @@ namespace OutlookClientExercise
 
         }
 
+        public List<Folder> GetFolders()
+        {
+            return this._folders
+                .OrderBy(f => f.Name)
+                .ToList();
+        }
+
+        public bool AddFolder(string name)
+        {
+            try
+            {
+                if (this._folders.Exists(folder => folder.Name == name))
+                    throw new Exception("The current folder already exists!");
+
+                this._folders.Add(new Folder(name));
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ConsoleManager.ShowError(ex.Message);
+                return false;
+            }
+        }
+
         public void Dispose()
         {
             this.Server.Dispose();

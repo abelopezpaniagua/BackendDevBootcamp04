@@ -13,7 +13,7 @@ namespace OutlookClientExercise
             do
             {
                 string menuInfo = "Menu \n1.Configure SMTP Server \n2.Send Message \n3.List Folders \n4.Add Folder" + 
-                    "\n5.Rename Folder \n6.Remove Folder \n7.Close Application \nPlease select an option";
+                    "\n5.Close Application \nPlease select an option";
 
                 clientActionChoice = ConsoleManager
                     .GetUserInputWithPreInformation<ClientActionChoice>(menuInfo);
@@ -47,18 +47,37 @@ namespace OutlookClientExercise
 
                     case ClientActionChoice.ListFolders:
 
+                        var folders = client.GetFolders();
+
+                        ConsoleManager.ShowInfo("Folders List: ");
+                        for (int i = 0; i < folders.Count; i++)
+                        {
+                            ConsoleManager.Show($"{i + 1}. {folders[i].Name}");
+                        }
+
+                        ConsoleManager.ShowInfo($"Select one folder (1 - {folders.Count}) or -1 for Cancel");
+                        var selectFolderOption = ConsoleManager.GetUserInput<int>();
+                        if (selectFolderOption == -1)
+                        {
+                            Console.Clear();
+                            continue;
+                        }
+
+                        var selectedFolder = folders[selectFolderOption - 1];
+
+                        ShowFolderSubmenu(selectedFolder);
+                        
                         break;
 
                     case ClientActionChoice.AddFolder:
 
-                        break;
+                        string folderName = ConsoleManager.GetUserInputWithPreInformation<string>("Please insert folder name");
 
-                    case ClientActionChoice.RenameFolder:
-
-                        break;
-
-                    case ClientActionChoice.RemoveFolder:
-
+                        if (client.AddFolder(folderName))
+                            ConsoleManager.ShowSuccess("Folder created successfully!");
+                        else
+                            ConsoleManager.ShowError("Folder already exists!");
+                        
                         break;
 
                     case ClientActionChoice.CloseApplication:
@@ -76,22 +95,42 @@ namespace OutlookClientExercise
             } while (clientActionChoice != ClientActionChoice.CloseApplication);
         }
 
+        public static void ShowFolderSubmenu(Folder folder)
+        {
+            FolderActionChoice folderActionChoice;
+
+            do
+            {
+                folderActionChoice = ConsoleManager.GetUserInputWithPreInformation<FolderActionChoice>("");
+            }
+            while (folderActionChoice != FolderActionChoice.Back);
+        }
+
+
         public enum ClientActionChoice
         {
             ConfigureSMTP = 1,
             SendMessage = 2,
             ListFolders = 3,
             AddFolder = 4,
-            RenameFolder = 5,
-            RemoveFolder = 6,
-            CloseApplication = 7
+            CloseApplication = 5
         }
 
-        public enum FoldersActionChoice
+        public enum FolderActionChoice
         {
-            ListMessages = 1,
-            DeleteMessage = 2,
-            MoveMessage = 3,
+            RenameFolder = 1,
+            RemoveFolder = 2,
+            ListMessages = 3,
+            ManageRules = 4,
+            Back = 5
         }
+        public enum MessageActionChoice
+        {
+            DeleteMessage = 1,
+            MoveMessage = 2,
+            Back = 3
+        }
+
+        //TODO: Manage RULES ENUM
     }
 }
