@@ -75,6 +75,27 @@ namespace OutlookClientExercise
             }
         }
 
+        public bool RemoveFolder(Folder folder)
+        {
+            try
+            {
+                if (folder.GetMessages().Count > 0)
+                    throw new Exception("Can't delete, this folder is not empty");
+
+                if (folder.IsProtected)
+                    throw new Exception("Can't delete, this folder is protected");
+
+                this._folders.Remove(folder);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ConsoleManager.ShowError(ex.Message);
+                return false;
+            }
+        }
+
         public void Dispose()
         {
             this.Server.Dispose();

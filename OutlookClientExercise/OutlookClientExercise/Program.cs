@@ -101,7 +101,7 @@ namespace OutlookClientExercise
 
             do
             {
-                string menuInfo = "Menu \n1.Rename Folder \n2.Remove Folder \n3.List Messages \n4.Manage Rules" +
+                string menuInfo = $"Menu - Folder: {folder.Name} \n1.Rename Folder \n2.Remove Folder \n3.List Messages \n4.Manage Rules" +
                     "\n5.Back \nPlease select an option";
 
                 folderActionChoice = ConsoleManager.GetUserInputWithPreInformation<FolderActionChoice>(menuInfo);
@@ -122,6 +122,17 @@ namespace OutlookClientExercise
 
                         break;
                     case FolderActionChoice.RemoveFolder:
+
+                        if(client.RemoveFolder(folder))
+                        {
+                            ConsoleManager.ShowSuccess($"Folder removed successfully!");
+                            folderActionChoice = FolderActionChoice.Back;
+                        }
+                        else
+                        {
+                            ConsoleManager.ShowError("Remove folder failed!");
+                        }
+
                         break;
                     case FolderActionChoice.ListMessages:
                         break;

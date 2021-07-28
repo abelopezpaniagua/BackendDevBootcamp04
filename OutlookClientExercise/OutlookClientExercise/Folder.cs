@@ -24,6 +24,13 @@ namespace OutlookClientExercise
             _messages = new List<Message>();
         }
 
+        public List<Message> GetMessages()
+        {
+            return this._messages
+                .OrderBy(m => m.Date)
+                .ToList();
+        }
+
         public void AddMessage(Message message)
         {
             _messages.Add(message);
