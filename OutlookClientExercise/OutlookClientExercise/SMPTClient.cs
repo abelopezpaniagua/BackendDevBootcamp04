@@ -40,7 +40,7 @@ namespace OutlookClientExercise
                     new List<string> { "dummy.email@gmail.com", "dummy2.email@gmail.com", "dummy3.email@gmail.com" }, 
                     "Draft Broadcast message for dummies", 
                     DateTime.Now, "Test message", 
-                    new List<string>() { "my.admin@gmail.com" }));
+                    new List<string>() { "my.admin@gmail.com" }, true));
 
             _folders = new List<Folder>() { inboxFolder, sendedFolder, draftsFolder };
         }

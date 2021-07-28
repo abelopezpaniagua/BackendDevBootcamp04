@@ -17,7 +17,7 @@ namespace OutlookClientExercise
         public DateTime Date { get; set; }
         public bool IsFlagged { get; set; }
 
-        public Message(string originIP, string from, List<string> to, string body, DateTime date, string subject = null, List<string> carbonCopy = null)
+        public Message(string originIP, string from, List<string> to, string body, DateTime date, string subject = null, List<string> carbonCopy = null, bool isFlagged = false)
         {
             OriginIP = originIP;
             From = from;
@@ -26,7 +26,7 @@ namespace OutlookClientExercise
             Date = date;
             Subject = subject;
             CarbonCopy = carbonCopy != null ? carbonCopy : new List<string>();
-            IsFlagged = false;
+            IsFlagged = isFlagged;
         }
     }
 }

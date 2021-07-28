@@ -135,6 +135,27 @@ namespace OutlookClientExercise
 
                         break;
                     case FolderActionChoice.ListMessages:
+                        var messages = folder.GetMessages();
+
+                        ConsoleManager.ShowInfo("Messages: ");
+                        for (int i = 0; i < messages.Count; i++)
+                        {
+                            string flagged = messages[i].IsFlagged ? "F" : "";
+                            ConsoleManager.Show($"[{flagged}] {i + 1}. ({messages[i].Date.ToLongDateString()}) {messages[i].From} - {messages[i].Subject ?? "No Subject"}: {messages[i].Body}");
+                        }
+
+                        ConsoleManager.ShowInfo($"Select one message (1 - {messages.Count}) or -1 for Cancel");
+                        var selectMessageOption = ConsoleManager.GetUserInput<int>();
+                        if (selectMessageOption == -1)
+                        {
+                            Console.Clear();
+                            break;
+                        }
+
+                        var selectedMessage = messages[selectMessageOption - 1];
+
+                        ShowMessageSubmenu(folder, selectedMessage);
+
                         break;
                     case FolderActionChoice.ManageRules:
                         break;
@@ -148,6 +169,32 @@ namespace OutlookClientExercise
                 }
             }
             while (folderActionChoice != FolderActionChoice.Back);
+        }
+
+        public static void ShowMessageSubmenu(Folder folder, Message message)
+        {
+            MessageActionChoice messageActionChoice;
+
+            do
+            {
+                messageActionChoice = ConsoleManager.GetUserInputWithPreInformation<MessageActionChoice>("");
+
+                switch (messageActionChoice)
+                {
+                    case MessageActionChoice.DeleteMessage:
+                        break;
+                    case MessageActionChoice.MoveMessage:
+                        break;
+                    case MessageActionChoice.Back:
+
+                        ConsoleManager.ShowInfo("Closing message...");
+
+                        break;
+                    default:
+                        break;
+                }
+
+            } while (messageActionChoice != MessageActionChoice.Back);
         }
 
         public enum ClientActionChoice
