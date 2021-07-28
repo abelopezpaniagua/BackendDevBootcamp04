@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "f44d8802-b19d-45d7-b536-c9ee9e80e146",
+		"name": "RestServiceNet5WebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCustomer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Request a valid id\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/v1/Customer/GetCustomer?id=4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"Customer",
+						"GetCustomer"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllCustomer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {",
+							"  \"type\": \"array\",",
+							"  \"items\": [",
+							"    {",
+							"      \"properties\": {",
+							"        \"customerName\": {",
+							"          \"type\": \"string\"",
+							"        },",
+							"        \"purchasesProduct\": {",
+							"          \"type\": \"string\"",
+							"        },",
+							"        \"paymentType\": {",
+							"          \"type\": \"string\"",
+							"        },",
+							"        \"id\": {",
+							"          \"type\": \"integer\"",
+							"        },",
+							"        \"createdDate\": {",
+							"          \"type\": \"string\"",
+							"        },",
+							"        \"modifiedDate\": {",
+							"          \"type\": \"string\"",
+							"        },",
+							"        \"isActive\": {",
+							"          \"type\": \"boolean\"",
+							"        }",
+							"      },",
+							"      \"required\": [",
+							"        \"customerName\",",
+							"        \"purchasesProduct\",",
+							"        \"paymentType\",",
+							"        \"id\",",
+							"        \"createdDate\",",
+							"        \"modifiedDate\",",
+							"        \"isActive\"",
+							"      ]",
+							"    }",
+							"  ]",
+							"}",
+							"pm.test(\"Validating Schema\", function () {",
+							"    pm.response.to.have.jsonSchema(schema);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/v1/Customer/GetAllCustomer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"Customer",
+						"GetAllCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertCustomer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validating data insert\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"createdDate\": \"2021-07-28T16:22:01.394Z\",\n  \"modifiedDate\": \"2021-07-28T16:22:01.394Z\",\n  \"isActive\": true,\n  \"customerName\": \"string Test2\",\n  \"purchasesProduct\": \"string\",\n  \"paymentType\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/v1/Customer/InsertCustomer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"Customer",
+						"InsertCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCustomer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validating update\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"createdDate\": \"2021-07-28T16:49:54.407Z\",\n  \"modifiedDate\": \"2021-07-28T16:49:54.407Z\",\n  \"isActive\": true,\n  \"customerName\": \"string\",\n  \"purchasesProduct\": \"string\",\n  \"paymentType\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/v1/Customer/UpdateCustomer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"Customer",
+						"UpdateCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCustomer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validating delete\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/v1/Customer/DeleteCustomer?Id=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"Customer",
+						"DeleteCustomer"
+					],
+					"query": [
+						{
+							"key": "Id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeatherForecast",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/v1/WeatherForecast/api/v1/Freezing/Freezing2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"WeatherForecast",
+						"api",
+						"v1",
+						"Freezing",
+						"Freezing2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteWeatherForecast",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/v1/WeatherForecast/api/v1/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"WeatherForecast",
+						"api",
+						"v1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
