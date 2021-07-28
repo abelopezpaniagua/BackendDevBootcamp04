@@ -60,12 +60,12 @@ namespace OutlookClientExercise
                         if (selectFolderOption == -1)
                         {
                             Console.Clear();
-                            continue;
+                            break;
                         }
 
                         var selectedFolder = folders[selectFolderOption - 1];
 
-                        ShowFolderSubmenu(selectedFolder);
+                        ShowFolderSubmenu(client, selectedFolder);
                         
                         break;
 
@@ -95,17 +95,49 @@ namespace OutlookClientExercise
             } while (clientActionChoice != ClientActionChoice.CloseApplication);
         }
 
-        public static void ShowFolderSubmenu(Folder folder)
+        public static void ShowFolderSubmenu(SMPTClient client, Folder folder)
         {
             FolderActionChoice folderActionChoice;
 
             do
             {
-                folderActionChoice = ConsoleManager.GetUserInputWithPreInformation<FolderActionChoice>("");
+                string menuInfo = "Menu \n1.Rename Folder \n2.Remove Folder \n3.List Messages \n4.Manage Rules" +
+                    "\n5.Back \nPlease select an option";
+
+                folderActionChoice = ConsoleManager.GetUserInputWithPreInformation<FolderActionChoice>(menuInfo);
+
+                switch (folderActionChoice)
+                {
+                    case FolderActionChoice.RenameFolder:
+
+                        string newFolderName = ConsoleManager.GetUserInputWithPreInformation<string>("Insert new folder name");
+                        if (folder.Rename(newFolderName))
+                        {
+                            ConsoleManager.ShowSuccess($"Folder renamed successful to: {folder.Name}!");
+                        }
+                        else
+                        {
+                            ConsoleManager.ShowError("Rename folder failed!");
+                        }
+
+                        break;
+                    case FolderActionChoice.RemoveFolder:
+                        break;
+                    case FolderActionChoice.ListMessages:
+                        break;
+                    case FolderActionChoice.ManageRules:
+                        break;
+                    case FolderActionChoice.Back:
+
+                        ConsoleManager.ShowInfo("Closing folder...");
+
+                        break;
+                    default:
+                        break;
+                }
             }
             while (folderActionChoice != FolderActionChoice.Back);
         }
-
 
         public enum ClientActionChoice
         {
@@ -121,9 +153,10 @@ namespace OutlookClientExercise
             RenameFolder = 1,
             RemoveFolder = 2,
             ListMessages = 3,
-            ManageRules = 4,
+            ManageRules = 4, //PENDING
             Back = 5
         }
+
         public enum MessageActionChoice
         {
             DeleteMessage = 1,

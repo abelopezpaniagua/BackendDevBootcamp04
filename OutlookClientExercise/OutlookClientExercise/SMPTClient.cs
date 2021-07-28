@@ -24,15 +24,15 @@ namespace OutlookClientExercise
             ConsoleManager.ShowInfo("Wellcome!");
             ConsoleManager.ShowSuccess("Client started successfully.");
 
-            var inboxFolder = new Folder("Inbox");
+            var inboxFolder = new Folder("Inbox", true);
             inboxFolder.AddMessage(
                 new Message("192.168.10.2", "dummy.email@gmail.com", new List<string> { "abel.lopez@gmail.com" }, "First test message for dummy", DateTime.Now));
             inboxFolder.AddMessage(
                 new Message("192.168.10.2", "dummy.email@gmail.com", new List<string> { "abel.lopez@gmail.com" }, "Second test message for dummy", DateTime.Now));
-            var sendedFolder = new Folder("Sended");
+            var sendedFolder = new Folder("Sended", true);
             sendedFolder.AddMessage(
                 new Message("192.168.0.1", "abel.lopez@gmail.com", new List<string> { "dummy.email@gmail.com", "dummy2.email@gmail.com" }, "Broadcast message for dummies", DateTime.Now));
-            var draftsFolder = new Folder("Drafts");
+            var draftsFolder = new Folder("Drafts", true);
             draftsFolder.AddMessage(
                 new Message(
                     "192.168.0.1", 
