@@ -11,10 +11,10 @@ namespace OutlookClientExercise
         private string _username;
         private string _password;
 
-        private List<DefaultFolder> _folders;
+        private List<Folder> _folders;
 
         public string Username => _username;
-        public List<DefaultFolder> Folders => _folders;
+        public List<Folder> Folders => _folders;
 
         public MailAccount(string username, string password)
         {
@@ -31,7 +31,7 @@ namespace OutlookClientExercise
             var draftsFolder = new DefaultFolder(DefaultFolder.DraftsFolderName, true);
             var spamFolder = new DefaultFolder(DefaultFolder.SpamFolderName, true);
 
-            this._folders = new List<DefaultFolder>() { inboxFolder, sendedFolder, draftsFolder, spamFolder };
+            this._folders = new List<Folder>() { inboxFolder, sendedFolder, draftsFolder, spamFolder };
         }
 
         public bool IsCorrectPassword(string password)

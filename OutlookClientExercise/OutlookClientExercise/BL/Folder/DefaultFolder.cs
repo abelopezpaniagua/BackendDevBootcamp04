@@ -22,7 +22,6 @@ namespace OutlookClientExercise
         public const string DraftsFolderName = "Drafts";
         public const string SpamFolderName = "Spam";
 
-        public string Name => _name;
         public bool IsProtected => _isProtected;
 
         public DefaultFolder(string name, bool isProtected = false) : base (name)

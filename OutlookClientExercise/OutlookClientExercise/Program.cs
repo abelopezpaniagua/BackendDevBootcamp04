@@ -7,7 +7,7 @@ namespace OutlookClientExercise
     class Program
     {
         #region SMTP Server Initialization
-        public static SMPTServer mailServer = new SMPTServer("Default SMTP Server", "DefaultServer", new()
+        public static SMTPServer mailServer = new SMTPServer("Default SMTP Server", "DefaultServer", new()
         {
             new("juan.gonzales@mail.com", "juan123"),
             new("pedro.almaraz@mail.com", "pedro123"),
@@ -21,7 +21,7 @@ namespace OutlookClientExercise
 
         static void Main(string[] args)
         {
-            SMPTClient client = new(mailServer);
+            SMTPClient client = new(mailServer);
 
             SystemActionChoice systemActionChoice;
 
@@ -86,7 +86,7 @@ namespace OutlookClientExercise
 
         #region Client Submenu
 
-        public static void ShowClientMenu(SMPTClient client)
+        public static void ShowClientMenu(SMTPClient client)
         {
             ClientActionChoice clientActionChoice;
 
@@ -194,7 +194,7 @@ namespace OutlookClientExercise
         #endregion
 
         #region Folder Submenu
-        public static void ShowFolderSubmenu(SMPTClient client, DefaultFolder folder)
+        public static void ShowFolderSubmenu(SMTPClient client, Folder folder)
         {
             FolderActionChoice folderActionChoice;
 
@@ -257,8 +257,13 @@ namespace OutlookClientExercise
 
                         break;
                     case FolderActionChoice.ManageRules:
+                        if (folder is not DefaultFolder)
+                        {
+                            ConsoleManager.ShowError("Can't manage rules on custom folders");
+                            break;
+                        }
 
-                        var currentRules = folder.GetActiveRules();
+                        var currentRules = (folder as DefaultFolder).GetActiveRules();
 
                         ConsoleManager.ShowInfo("Active Rules: ");
                         for (int i = 0; i < currentRules.Count; i++)
@@ -276,13 +281,19 @@ namespace OutlookClientExercise
 
                         var selectedRule = currentRules[selectRuleOption - 1];
 
-                        ShowRuleSubmenu(folder, selectedRule);
+                        ShowRuleSubmenu(folder as DefaultFolder, selectedRule);
 
                         break;
 
                     case FolderActionChoice.AddRule:
+                        
+                        if (folder is not DefaultFolder)
+                        {
+                            ConsoleManager.ShowError("Can't add rules on custom folders");
+                            break;
+                        }
 
-                        var availableRules = folder.GetAvailableRules();
+                        var availableRules = (folder as DefaultFolder).GetAvailableRules();
 
                         ConsoleManager.ShowInfo("Available Rules: ");
                         for (int i = 0; i < availableRules.Count; i++)
@@ -300,7 +311,7 @@ namespace OutlookClientExercise
 
                         var selectedAvailableRule = availableRules[selectAvailableRuleOption - 1];
 
-                        folder.AddActiveRule(selectedAvailableRule);
+                        (folder as DefaultFolder).AddActiveRule(selectedAvailableRule);
 
                         ConsoleManager.ShowSuccess("Rule added successfully!");
 
@@ -321,7 +332,7 @@ namespace OutlookClientExercise
         #endregion
 
         #region Message Submenu
-        public static void ShowMessageSubmenu(SMPTClient client, DefaultFolder folder, Message message)
+        public static void ShowMessageSubmenu(SMTPClient client, Folder folder, Message message)
         {
             MessageActionChoice messageActionChoice;
 

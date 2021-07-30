@@ -1,14 +1,16 @@
-﻿using OutlookClientExercise.UserInterface;
+﻿using OutlookClientExercise.BL;
+using OutlookClientExercise.UserInterface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OutlookClientExercise.BL
+namespace OutlookClientExercise
 {
     public abstract class Folder : IMessageManager
     {
         protected List<Message> _messages;
         protected string _name;
+        public string Name => _name;
 
         public Folder(string name)
         {

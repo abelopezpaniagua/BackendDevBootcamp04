@@ -1,25 +1,24 @@
-﻿using OutlookClientExercise.UserInterface;
+﻿using OutlookClientExercise.BL;
+using OutlookClientExercise.UserInterface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OutlookClientExercise
 {
-    public class SMPTClient : IDisposable
+    public class SMTPClient : IDisposable, IFolderManager
     {
-        private SMPTServer _server;
+        private SMTPServer _server;
 
         private MailAccount _currentConnectedAccount;
-        private List<DefaultFolder> _folders;
+        private List<Folder> _folders;
 
-        public SMPTServer Server => _server;
+        public SMTPServer Server => _server;
         public MailAccount CurrentConnectedAccount => _currentConnectedAccount;
 
         public bool IsConnected { get; set; }
 
-        public SMPTClient(SMPTServer serverToConnect)
+        public SMTPClient(SMTPServer serverToConnect)
         {
             this._server = serverToConnect;
             IsConnected = false;
@@ -55,6 +54,7 @@ namespace OutlookClientExercise
         {
             IsConnected = false;
             this._currentConnectedAccount = null;
+            this._folders = null;
 
             ConsoleManager.ShowInfo($"Disconnected from server {Server.ServerName}");
         }
@@ -78,7 +78,7 @@ namespace OutlookClientExercise
             return this._server.ProcessMessage(newMessage);
         }
 
-        public List<DefaultFolder> GetFolders()
+        public List<Folder> GetFolders()
         {
             return this._folders
                 .OrderBy(f => f.Name)
@@ -92,7 +92,7 @@ namespace OutlookClientExercise
                 if (this._folders.Exists(folder => folder.Name == name))
                     throw new Exception("The current folder already exists!");
 
-                this._folders.Add(new DefaultFolder(name));
+                this._folders.Add(new CustomFolder(name));
                 
                 return true;
             }
@@ -103,15 +103,16 @@ namespace OutlookClientExercise
             }
         }
 
-        public bool RemoveFolder(DefaultFolder folder)
+        public bool RemoveFolder(Folder folder)
         {
             try
             {
                 if (folder.GetMessages().Count > 0)
                     throw new Exception("Can't delete, this folder is not empty");
 
-                if (folder.IsProtected)
-                    throw new Exception("Can't delete, this folder is protected");
+                if (folder is DefaultFolder)
+                    if ((folder as DefaultFolder).IsProtected)
+                        throw new Exception("Can't delete, this folder is protected");
 
                 this._folders.Remove(folder);
 
