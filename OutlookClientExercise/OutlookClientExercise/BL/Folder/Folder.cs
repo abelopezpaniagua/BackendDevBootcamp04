@@ -1,4 +1,5 @@
-﻿using OutlookClientExercise.UserInterface;
+﻿using OutlookClientExercise.BL;
+using OutlookClientExercise.UserInterface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace OutlookClientExercise
 {
     public delegate void ExecuteRule(MailAccount mailAccount, Folder folder, Message message, MessageAction messageAction);
 
-    public class Folder
+    public class Folder : IManageRules
     {
         private List<Message> _messages;
 

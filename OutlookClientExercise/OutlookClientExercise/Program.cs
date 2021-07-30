@@ -337,7 +337,7 @@ namespace OutlookClientExercise
                 {
                     case MessageActionChoice.ReadMessage:
 
-                        ConsoleManager.ShowSuccess("================= MESSAGE =================");
+                        ConsoleManager.ShowSuccess("===================== MESSAGE ==================");
 
                         string flagged = message.IsFlagged ? "F" : "";
                         string subject = !string.IsNullOrEmpty(message.Subject) ? message.Subject : "No Subject";
