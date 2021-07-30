@@ -13,3 +13,4 @@ C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\
 C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\ref\OutlookClientExercise.dll
 C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.pdb
 C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.genruntimeconfig.cache
+C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.csproj.AssemblyReference.cache

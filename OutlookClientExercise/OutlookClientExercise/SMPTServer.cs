@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OutlookClientExercise.UserInterface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -88,7 +89,7 @@ namespace OutlookClientExercise
                 originAccount?.Folders
                     .Where(f => f.Name == Folder.SendedFolderName)
                     .FirstOrDefault()?
-                    .AddMessage(message);
+                    .AddMessage(message, MessageAction.MessageSended);
 
                 foreach (var email in message.To)
                 {
@@ -97,7 +98,7 @@ namespace OutlookClientExercise
                     targetAccount?.Folders
                         .Where(f => f.Name == Folder.InboxFolderName)
                         .FirstOrDefault()?
-                        .AddMessage(message);
+                        .AddMessage(message, MessageAction.MessageReceived);
                 }
 
                 foreach (var email in message.CarbonCopy)
@@ -107,7 +108,7 @@ namespace OutlookClientExercise
                     targetAccount?.Folders
                         .Where(f => f.Name == Folder.InboxFolderName)
                         .FirstOrDefault()?
-                        .AddMessage(message);
+                        .AddMessage(message, MessageAction.MessageReceived);
                 }
 
                 return true;
@@ -118,5 +119,12 @@ namespace OutlookClientExercise
                 return false;
             }
         }
+    }
+
+    public enum MessageAction
+    {
+        MessageSended,
+        MessageReceived,
+        MessageMoved
     }
 }

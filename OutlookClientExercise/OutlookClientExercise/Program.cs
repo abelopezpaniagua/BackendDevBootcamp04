@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OutlookClientExercise.UserInterface;
+using System;
 using System.Collections.Generic;
 
 namespace OutlookClientExercise
@@ -11,6 +12,8 @@ namespace OutlookClientExercise
             new("pedro.almaraz@mail.com", "pedro123"),
             new("abel.lopez@mail.com", "abel123")
         });
+
+        #region Main Program
 
         static void Main(string[] args)
         {
@@ -74,6 +77,10 @@ namespace OutlookClientExercise
 
             } while (systemActionChoice != SystemActionChoice.CloseApplication);
         }
+
+        #endregion
+
+        #region Client Submenu
 
         public static void ShowClientMenu(SMPTClient client)
         {
@@ -180,6 +187,9 @@ namespace OutlookClientExercise
             } while (clientActionChoice != ClientActionChoice.LogoutClient);
         }
 
+        #endregion
+
+        #region Folder Submenu
         public static void ShowFolderSubmenu(SMPTClient client, Folder folder)
         {
             FolderActionChoice folderActionChoice;
@@ -208,7 +218,7 @@ namespace OutlookClientExercise
                         break;
                     case FolderActionChoice.RemoveFolder:
 
-                        if(client.RemoveFolder(folder))
+                        if (client.RemoveFolder(folder))
                         {
                             ConsoleManager.ShowSuccess($"Folder removed successfully!");
                             folderActionChoice = FolderActionChoice.Back;
@@ -242,8 +252,34 @@ namespace OutlookClientExercise
                         ShowMessageSubmenu(client, folder, selectedMessage);
 
                         break;
-                    case FolderActionChoice.ManageRules: //TODO Manage Rules
+                    case FolderActionChoice.ManageRules:
+
+                        var currentRules = folder.GetActiveRules();
+
+                        ConsoleManager.ShowInfo("Active Rules: ");
+                        for (int i = 0; i < currentRules.Count; i++)
+                        {
+                            ConsoleManager.Show($"Rule {i}");
+                        }
+
+                        ConsoleManager.ShowInfo($"Select a Rule (1 - {currentRules.Count}) or -1 for Cancel");
+                        var selectRuleOption = ConsoleManager.GetUserInput<int>();
+                        if (selectRuleOption == -1)
+                        {
+                            Console.Clear();
+                            break;
+                        }
+
+                        var selectedRule = currentRules[selectRuleOption - 1];
+
+                        ShowRuleSubmenu(client, folder, selectedRule);
+
                         break;
+
+                    case FolderActionChoice.AddRule:
+
+                        break;
+
                     case FolderActionChoice.Back:
 
                         ConsoleManager.ShowInfo("Closing folder...");
@@ -256,6 +292,11 @@ namespace OutlookClientExercise
             while (folderActionChoice != FolderActionChoice.Back);
         }
 
+        #endregion
+
+
+
+        #region Message Submenu
         public static void ShowMessageSubmenu(SMPTClient client, Folder folder, Message message)
         {
             MessageActionChoice messageActionChoice;
@@ -351,6 +392,16 @@ namespace OutlookClientExercise
             } while (messageActionChoice != MessageActionChoice.Back);
         }
 
+        #endregion
+
+        #region Rule Submenu
+        public static void ShowRuleSubmenu(SMPTClient client, Folder folder, FolderRule folderRule)
+        {
+
+        }
+
+        #endregion
+
         public static List<string> GetTargetEmails(string fieldName, bool isStrict = false)
         {
             List<string> targetEmails = new List<string>();
@@ -385,6 +436,8 @@ namespace OutlookClientExercise
             return targetEmails;
         }
 
+        #region Application Enums
+
         public enum SystemActionChoice
         {
             LoginClient = 1,
@@ -406,8 +459,9 @@ namespace OutlookClientExercise
             RenameFolder = 1,
             RemoveFolder = 2,
             ListMessages = 3,
-            ManageRules = 4, //PENDING
-            Back = 5
+            ManageRules = 4,
+            AddRule = 5,
+            Back = 6
         }
 
         public enum MessageActionChoice
@@ -419,6 +473,8 @@ namespace OutlookClientExercise
             Back = 5
         }
 
+
         //TODO: Manage RULES ENUM
+        #endregion
     }
 }
