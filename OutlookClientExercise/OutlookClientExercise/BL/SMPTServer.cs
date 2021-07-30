@@ -87,7 +87,7 @@ namespace OutlookClientExercise
                 var originAccount = this._mailAccounts.Where(ma => ma.Username == message.From).FirstOrDefault();
 
                 originAccount?.Folders
-                    .Where(f => f.Name == Folder.SendedFolderName)
+                    .Where(f => f.Name == DefaultFolder.SendedFolderName)
                     .FirstOrDefault()?
                     .AddMessage(originAccount, message, MessageAction.MessageSended);
 
@@ -96,7 +96,7 @@ namespace OutlookClientExercise
                     var targetAccount = this._mailAccounts.Where(ma => ma.Username == email).FirstOrDefault();
 
                     targetAccount?.Folders
-                        .Where(f => f.Name == Folder.InboxFolderName)
+                        .Where(f => f.Name == DefaultFolder.InboxFolderName)
                         .FirstOrDefault()?
                         .AddMessage(targetAccount, (Message)message.Clone(), MessageAction.MessageReceived);
                 }
@@ -106,7 +106,7 @@ namespace OutlookClientExercise
                     var targetAccount = this._mailAccounts.Where(ma => ma.Username == email).FirstOrDefault();
 
                     targetAccount?.Folders
-                        .Where(f => f.Name == Folder.InboxFolderName)
+                        .Where(f => f.Name == DefaultFolder.InboxFolderName)
                         .FirstOrDefault()?
                         .AddMessage(targetAccount, (Message)message.Clone(), MessageAction.MessageReceived);
                 }

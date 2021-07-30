@@ -12,7 +12,7 @@ namespace OutlookClientExercise
         private SMPTServer _server;
 
         private MailAccount _currentConnectedAccount;
-        private List<Folder> _folders;
+        private List<DefaultFolder> _folders;
 
         public SMPTServer Server => _server;
         public MailAccount CurrentConnectedAccount => _currentConnectedAccount;
@@ -78,7 +78,7 @@ namespace OutlookClientExercise
             return this._server.ProcessMessage(newMessage);
         }
 
-        public List<Folder> GetFolders()
+        public List<DefaultFolder> GetFolders()
         {
             return this._folders
                 .OrderBy(f => f.Name)
@@ -92,7 +92,7 @@ namespace OutlookClientExercise
                 if (this._folders.Exists(folder => folder.Name == name))
                     throw new Exception("The current folder already exists!");
 
-                this._folders.Add(new Folder(name));
+                this._folders.Add(new DefaultFolder(name));
                 
                 return true;
             }
@@ -103,7 +103,7 @@ namespace OutlookClientExercise
             }
         }
 
-        public bool RemoveFolder(Folder folder)
+        public bool RemoveFolder(DefaultFolder folder)
         {
             try
             {

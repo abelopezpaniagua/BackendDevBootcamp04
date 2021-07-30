@@ -194,7 +194,7 @@ namespace OutlookClientExercise
         #endregion
 
         #region Folder Submenu
-        public static void ShowFolderSubmenu(SMPTClient client, Folder folder)
+        public static void ShowFolderSubmenu(SMPTClient client, DefaultFolder folder)
         {
             FolderActionChoice folderActionChoice;
 
@@ -321,7 +321,7 @@ namespace OutlookClientExercise
         #endregion
 
         #region Message Submenu
-        public static void ShowMessageSubmenu(SMPTClient client, Folder folder, Message message)
+        public static void ShowMessageSubmenu(SMPTClient client, DefaultFolder folder, Message message)
         {
             MessageActionChoice messageActionChoice;
 
@@ -419,7 +419,7 @@ namespace OutlookClientExercise
         #endregion
 
         #region Rule Submenu
-        public static void ShowRuleSubmenu(Folder folder, FolderRule folderRule)
+        public static void ShowRuleSubmenu(DefaultFolder folder, FolderRule folderRule)
         {
             RuleActionChoice ruleActionChoice;
 
