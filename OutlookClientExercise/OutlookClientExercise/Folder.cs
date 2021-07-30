@@ -12,6 +12,10 @@ namespace OutlookClientExercise
         private string _name;
         private bool _isProtected;
 
+        public const string InboxFolderName = "Inbox";
+        public const string SendedFolderName = "Sended";
+        public const string DraftsFolderName = "Drafts";
+        public const string SpamFolderName = "Spam";
 
         public string Name => _name;
         public bool IsProtected => _isProtected;
@@ -34,6 +38,47 @@ namespace OutlookClientExercise
         public void AddMessage(Message message)
         {
             _messages.Add(message);
+        }
+
+        public bool DeleteMessage(Message message)
+        {
+            try
+            {
+                this._messages.Remove(message);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ConsoleManager.ShowError(ex.Message);
+
+                return false;
+            }
+        }
+
+        public bool MoveMessage(Message message, Folder destinyFolder)
+        {
+            try
+            {
+                var targetMessage = this._messages
+                    .Where(m => m == message)
+                    .FirstOrDefault();
+
+                if (targetMessage == null)
+                    throw new Exception("That message does not exist!");
+
+                destinyFolder.AddMessage(targetMessage);
+
+                this._messages.Remove(targetMessage);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ConsoleManager.ShowError(ex.Message);
+
+                return false;
+            }
         }
 
         public bool Rename(string newName)

@@ -1,4 +1,3 @@
-C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.csproj.AssemblyReference.cache
 C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.GeneratedMSBuildEditorConfig.editorconfig
 C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.AssemblyInfoInputs.cache
 C:\netProjects\BackendDevBootcamp04\OutlookClientExercise\OutlookClientExercise\obj\Debug\net5.0\OutlookClientExercise.AssemblyInfo.cs

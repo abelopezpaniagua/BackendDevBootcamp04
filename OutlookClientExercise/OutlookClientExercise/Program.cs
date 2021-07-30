@@ -1,19 +1,105 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OutlookClientExercise
 {
     class Program
     {
+        //public static List<string> dummyEmails = new List<string>()
+        //{
+        //    "dummy.one@mail.com",
+        //    "dummy.fantastic@mail.com",
+        //    "dummy.two@mail.com",
+        //    "dummy.three@mail.com",
+        //    "dummy.four@mail.com",
+        //    "dummy.five@mail.com",
+        //    "dummy.six@mail.com",
+        //    "dummy.seven@mail.com",
+        //    "dummy.fantasy@mail.com",
+        //    "dummy.horrible@mail.com",
+        //};
+
+        public static SMPTServer mailServer = new SMPTServer("Default SMTP Server", "DefaultServer", new()
+        {
+            //new("juan.gonzales@mail.com", "juan123", new MessagesMock("juan.gonzales@mail.com", dummyEmails, dummyEmails, 5)),
+            //new("pedro.almaraz@mail.com", "pedro123", new MessagesMock("pedro.almaraz@mail.com", dummyEmails, dummyEmails, 3)),
+            //new("abel.lopez@mail.com", "abel123", new MessagesMock("abel.lopez@mail.com", dummyEmails, dummyEmails, 6))
+            new("juan.gonzales@mail.com", "juan123"),
+            new("pedro.almaraz@mail.com", "pedro123"),
+            new("abel.lopez@mail.com", "abel123")
+        });
+
         static void Main(string[] args)
         {
-            SMPTClient client = new();
+            SMPTClient client = new(mailServer);
 
+            SystemActionChoice systemActionChoice;
+
+            do
+            {
+                string menuInfo = "Menu \n1.Login \n2.Register New Account \n3.Close Application \nPlease select an option";
+
+                systemActionChoice = ConsoleManager.GetUserInputWithPreInformation<SystemActionChoice>(menuInfo);
+
+                switch (systemActionChoice)
+                {
+                    case SystemActionChoice.LoginClient:
+
+                        string username = ConsoleManager.GetUserInputWithPreInformation<string>("Username");
+                        string password = ConsoleManager.GetUserInputWithPreInformation<string>("Password");
+
+                        if (!client.Connect(username, password))
+                        {
+                            ConsoleManager.ShowError("Incorrect credentials");
+                            break;
+                        }
+
+                        ShowClientMenu(client);
+
+                        break;
+
+                    case SystemActionChoice.RegisterAccount:
+
+                        ConsoleManager.ShowInfo("Register new Account");
+                        string newUsername = ConsoleManager.GetUserInputWithPreInformation<string>("Insert username");
+                        string newPassword = ConsoleManager.GetUserInputWithPreInformation<string>("Insert password");
+
+                        if (!mailServer.RegisterAccount(newUsername, newPassword))
+                        {
+                            ConsoleManager.ShowError("Account registration failed!");
+                            break;
+                        }
+
+                        ConsoleManager.ShowSuccess($"Account {newUsername} has been created successfully!");
+
+                        if (client.Connect(newUsername, newPassword))
+                        {
+                            ConsoleManager.ShowError("Incorrect credentials");
+                            break;
+                        }
+
+                        ShowClientMenu(client);
+
+                        break;
+
+                    case SystemActionChoice.CloseApplication:
+                        ConsoleManager.ShowInfo("Closing application...");
+                        break;
+                    default:
+                        break;
+                }
+
+            } while (systemActionChoice != SystemActionChoice.CloseApplication);
+        }
+
+        public static void ShowClientMenu(SMPTClient client)
+        {
             ClientActionChoice clientActionChoice;
 
             do
             {
-                string menuInfo = "Menu \n1.Configure SMTP Server \n2.Send Message \n3.List Folders \n4.Add Folder" + 
-                    "\n5.Close Application \nPlease select an option";
+                string menuInfo = "Menu \n1.Configure SMTP Server \n2.Send Message \n3.List Folders \n4.Add Folder" +
+                    "\n5.Logout \nPlease select an option";
 
                 clientActionChoice = ConsoleManager
                     .GetUserInputWithPreInformation<ClientActionChoice>(menuInfo);
@@ -28,11 +114,9 @@ namespace OutlookClientExercise
                         string serverDescription = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Server Description");
                         string serverName = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Server Name");
                         string serverPort = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Port (Default: 537)");
-                        string serverUsername = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Username");
-                        string serverPassword = ConsoleManager.GetUserInputWithPreInformation<string>("Insert Password");
 
                         bool serverUpdated = client.Server.Update(
-                            serverDescription, serverName, serverUsername, serverPassword, !string.IsNullOrEmpty(serverPort) ? int.Parse(serverPort) : null);
+                            serverDescription, serverName, !string.IsNullOrEmpty(serverPort) ? int.Parse(serverPort) : null);
 
                         if (serverUpdated)
                             ConsoleManager.ShowSuccess("SMTP Server Config successfully updated!");
@@ -42,6 +126,24 @@ namespace OutlookClientExercise
                         break;
 
                     case ClientActionChoice.SendMessage:
+
+                        ConsoleManager.ShowInfo("The (*) fields are required");
+
+                        List<string> toEmails = GetTargetEmails("To", true);
+
+                        string body = ConsoleManager.GetUserInputWithPreInformation<string>("Body (*)");
+                        string subject = ConsoleManager.GetUserInputWithPreInformation<string>("Subject");
+
+                        List<string> carbonCopyEmails = GetTargetEmails("CC", false);
+
+                        if (client.SendMessage(toEmails, body, subject, carbonCopyEmails))
+                        {
+                            ConsoleManager.ShowSuccess("Message Sended Successfully!");
+                        }
+                        else
+                        {
+                            ConsoleManager.ShowError("An error ocurred while sending the message :(");
+                        }
 
                         break;
 
@@ -66,7 +168,7 @@ namespace OutlookClientExercise
                         var selectedFolder = folders[selectFolderOption - 1];
 
                         ShowFolderSubmenu(client, selectedFolder);
-                        
+
                         break;
 
                     case ClientActionChoice.AddFolder:
@@ -77,22 +179,22 @@ namespace OutlookClientExercise
                             ConsoleManager.ShowSuccess("Folder created successfully!");
                         else
                             ConsoleManager.ShowError("Folder already exists!");
-                        
+
                         break;
 
-                    case ClientActionChoice.CloseApplication:
+                    case ClientActionChoice.LogoutClient:
                         client.Dispose();
 
                         break;
                 }
 
-                if (clientActionChoice != ClientActionChoice.CloseApplication)
+                if (clientActionChoice != ClientActionChoice.LogoutClient)
                 {
                     Console.ReadKey();
                     Console.Clear();
                 }
 
-            } while (clientActionChoice != ClientActionChoice.CloseApplication);
+            } while (clientActionChoice != ClientActionChoice.LogoutClient);
         }
 
         public static void ShowFolderSubmenu(SMPTClient client, Folder folder)
@@ -154,10 +256,10 @@ namespace OutlookClientExercise
 
                         var selectedMessage = messages[selectMessageOption - 1];
 
-                        ShowMessageSubmenu(folder, selectedMessage);
+                        ShowMessageSubmenu(client, folder, selectedMessage);
 
                         break;
-                    case FolderActionChoice.ManageRules:
+                    case FolderActionChoice.ManageRules: //TODO Manage Rules
                         break;
                     case FolderActionChoice.Back:
 
@@ -171,19 +273,88 @@ namespace OutlookClientExercise
             while (folderActionChoice != FolderActionChoice.Back);
         }
 
-        public static void ShowMessageSubmenu(Folder folder, Message message)
+        public static void ShowMessageSubmenu(SMPTClient client, Folder folder, Message message)
         {
             MessageActionChoice messageActionChoice;
 
             do
             {
-                messageActionChoice = ConsoleManager.GetUserInputWithPreInformation<MessageActionChoice>("");
+                string messageTitle = $"Message: {message.Date.ToLongDateString()} - {message.From}";
+                string menuInfo = $"Menu - {messageTitle} \n1.Read Message \n2.Toggle Flagged \n3.Delete Message \n4.Move Message" +
+                    "\n5.Back \nPlease select an option";
+
+                messageActionChoice = ConsoleManager.GetUserInputWithPreInformation<MessageActionChoice>(menuInfo);
 
                 switch (messageActionChoice)
                 {
+                    case MessageActionChoice.ReadMessage:
+
+                        ConsoleManager.ShowSuccess("================= MESSAGE =================");
+
+                        string flagged = message.IsFlagged ? "F" : "";
+                        string subject = !string.IsNullOrEmpty(message.Subject) ? message.Subject : "No Subject";
+
+                        ConsoleManager.ShowInfo($"Date: {message.Date.ToShortDateString()} ----------- Flagged: [{flagged}]");
+                        ConsoleManager.ShowInfo($"From: {message.From}");
+                        ConsoleManager.ShowInfo($"Subject: { subject }");
+                        ConsoleManager.ShowInfo($"To: { string.Join(',', message.To) }");
+                        ConsoleManager.ShowInfo($"CC: { string.Join(',', message.CarbonCopy) }");
+                        ConsoleManager.ShowInfo("==================================================");
+                        ConsoleManager.Show(message.Body);
+                        ConsoleManager.ShowInfo("==================================================");
+
+                        Console.ReadKey();
+
+                        break;
+
+                    case MessageActionChoice.MarkFlagMessage:
+
+                        message.ToggleFlagged();
+                        ConsoleManager.ShowSuccess("Message flagged changed successfully!");
+
+                        break;
                     case MessageActionChoice.DeleteMessage:
+
+                        if (folder.DeleteMessage(message))
+                        {
+                            ConsoleManager.ShowSuccess("Message Deleted Successfully!");
+                        }
+                        else
+                        {
+                            ConsoleManager.ShowError("Delete Message Failed!");
+                        }
+
                         break;
                     case MessageActionChoice.MoveMessage:
+
+                        var foldersSelection = client.GetFolders()
+                            .FindAll(f => f != folder);
+
+                        ConsoleManager.ShowInfo("Folders List: ");
+                        for (int i = 0; i < foldersSelection.Count; i++)
+                        {
+                            ConsoleManager.Show($"{i + 1}. {foldersSelection[i].Name}");
+                        }
+
+                        ConsoleManager.ShowInfo($"Select one folder (1 - {foldersSelection.Count}) or -1 for Cancel");
+                        var selectFolderOption = ConsoleManager.GetUserInput<int>();
+                        if (selectFolderOption == -1)
+                        {
+                            Console.Clear();
+                            break;
+                        }
+
+                        var selectedFolder = foldersSelection[selectFolderOption - 1];
+
+                        if (folder.MoveMessage(message, selectedFolder))
+                        {
+                            ConsoleManager.ShowSuccess($"Message moved to: {selectedFolder.Name} successfully!");
+                        }
+                        else
+                        {
+                            ConsoleManager.ShowError("Message moved failed!");
+                        }
+
                         break;
                     case MessageActionChoice.Back:
 
@@ -197,13 +368,54 @@ namespace OutlookClientExercise
             } while (messageActionChoice != MessageActionChoice.Back);
         }
 
+        public static List<string> GetTargetEmails(string fieldName, bool isStrict = false)
+        {
+            List<string> targetEmails = new List<string>();
+            int targetEmailsCount = 0;
+            bool isInsertingTargetEmails = true;
+
+            do
+            {
+                string required = isStrict ? "(*)" : "";
+                string toEmail = ConsoleManager.GetUserInputWithPreInformation<string>($"{fieldName} { required }");
+
+                if (isStrict && (string.IsNullOrEmpty(toEmail) || string.IsNullOrWhiteSpace(toEmail) || !toEmail.Contains("@mail.com")))
+                {
+                    ConsoleManager.ShowError("Invalid Email!, insert again.");
+                    continue;
+                }
+
+                if (isStrict || !string.IsNullOrWhiteSpace(toEmail) || string.IsNullOrEmpty(toEmail))
+                {
+                    targetEmails.Add(toEmail);
+
+                    string insertMoreTargetEmails = ConsoleManager.GetUserInputWithPreInformation<string>("You need to add more target emails?: (S/N)");
+                    isInsertingTargetEmails = insertMoreTargetEmails == "S";
+                } 
+                else
+                {
+                    isInsertingTargetEmails = false;
+                }
+
+            } while ((targetEmailsCount == 0 || !isStrict) && isInsertingTargetEmails);
+
+            return targetEmails;
+        }
+
+        public enum SystemActionChoice
+        {
+            LoginClient = 1,
+            RegisterAccount = 2,
+            CloseApplication = 3
+        }
+
         public enum ClientActionChoice
         {
             ConfigureSMTP = 1,
             SendMessage = 2,
             ListFolders = 3,
             AddFolder = 4,
-            CloseApplication = 5
+            LogoutClient = 5
         }
 
         public enum FolderActionChoice
@@ -217,9 +429,11 @@ namespace OutlookClientExercise
 
         public enum MessageActionChoice
         {
-            DeleteMessage = 1,
-            MoveMessage = 2,
-            Back = 3
+            ReadMessage = 1,
+            MarkFlagMessage = 2,
+            DeleteMessage = 3,
+            MoveMessage = 4,
+            Back = 5
         }
 
         //TODO: Manage RULES ENUM

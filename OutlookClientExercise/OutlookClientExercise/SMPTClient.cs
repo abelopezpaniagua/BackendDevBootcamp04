@@ -8,46 +8,73 @@ namespace OutlookClientExercise
 {
     public class SMPTClient : IDisposable
     {
-        public SMPTServer Server;
+        private SMPTServer _server;
+
+        private MailAccount _currentConnectedAccount;
         private List<Folder> _folders;
 
-        public SMPTClient()
-        {
-            Server = new("Default SMTP Server", "DefaultServer", "admin", "admin");
+        public SMPTServer Server => _server;
+        public MailAccount CurrentConnectedAccount => _currentConnectedAccount;
 
-            Initialize();
+        public bool IsConnected { get; set; }
+
+        public SMPTClient(SMPTServer serverToConnect)
+        {
+            this._server = serverToConnect;
+            IsConnected = false;
         }
 
+        public bool Connect(string username, string password)
+        {
+            try
+            {
+                this._currentConnectedAccount = _server.AccessAccount(username, password);
+
+                if (this._currentConnectedAccount == null)
+                    throw new Exception("Account does not exists!");
+
+                IsConnected = true;
+                Initialize();
+
+                ConsoleManager.ShowSuccess($"Connected to server: {Server.ServerName} with username: {this._currentConnectedAccount.Username} on port: {Server.Port}");
+
+                ConsoleManager.ShowInfo("Wellcome!");
+                ConsoleManager.ShowSuccess("Client started successfully.");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ConsoleManager.ShowError(ex.Message);
+                return false;
+            }
+        }
+
+        public void Disconnect()
+        {
+            IsConnected = false;
+            this._currentConnectedAccount = null;
+
+            ConsoleManager.ShowInfo($"Disconnected from server {Server.ServerName}");
+        }
 
         private void Initialize()
         {
-            ConsoleManager.ShowInfo("Wellcome!");
-            ConsoleManager.ShowSuccess("Client started successfully.");
-
-            var inboxFolder = new Folder("Inbox", true);
-            inboxFolder.AddMessage(
-                new Message("192.168.10.2", "dummy.email@gmail.com", new List<string> { "abel.lopez@gmail.com" }, "First test message for dummy", DateTime.Now));
-            inboxFolder.AddMessage(
-                new Message("192.168.10.2", "dummy.email@gmail.com", new List<string> { "abel.lopez@gmail.com" }, "Second test message for dummy", DateTime.Now));
-            var sendedFolder = new Folder("Sended", true);
-            sendedFolder.AddMessage(
-                new Message("192.168.0.1", "abel.lopez@gmail.com", new List<string> { "dummy.email@gmail.com", "dummy2.email@gmail.com" }, "Broadcast message for dummies", DateTime.Now));
-            var draftsFolder = new Folder("Drafts", true);
-            draftsFolder.AddMessage(
-                new Message(
-                    "192.168.0.1", 
-                    "abel.lopez@gmail.com", 
-                    new List<string> { "dummy.email@gmail.com", "dummy2.email@gmail.com", "dummy3.email@gmail.com" }, 
-                    "Draft Broadcast message for dummies", 
-                    DateTime.Now, "Test message", 
-                    new List<string>() { "my.admin@gmail.com" }, true));
-
-            _folders = new List<Folder>() { inboxFolder, sendedFolder, draftsFolder };
+            this._folders = this._currentConnectedAccount.Folders;
         }
 
-        public void SendMessage(Message message)
+        public bool SendMessage(List<string> toEmails, string body, string subject, List<string> carbonCopyEmails)
         {
+            Message newMessage = new(
+                            "192.168.0.1", 
+                            this._currentConnectedAccount.Username, 
+                            toEmails, 
+                            body, 
+                            DateTime.Now, 
+                            subject != string.Empty ? subject : null, 
+                            carbonCopyEmails);
 
+            return this._server.ProcessMessage(newMessage);
         }
 
         public List<Folder> GetFolders()
@@ -98,7 +125,8 @@ namespace OutlookClientExercise
 
         public void Dispose()
         {
-            this.Server.Dispose();
+            this._folders = null;
+            this.Disconnect();
         }
     }
 }

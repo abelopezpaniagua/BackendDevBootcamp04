@@ -8,25 +8,39 @@ namespace OutlookClientExercise
 {
     public class Message
     {
-        public string OriginIP { get; set; }
-        public string From { get; set; }
-        public List<string> To { get; set; }
-        public string Subject { get; set; }
-        public List<string>  CarbonCopy { get; set; }
-        public string Body { get; set; }
-        public DateTime Date { get; set; }
-        public bool IsFlagged { get; set; }
+        private string _originIP;
+        private string _from;
+        private List<string> _to;
+        private string _subject;
+        private List<string> _carbonCopy;
+        private string _body;
+        private DateTime _date;
+        private bool _isFlagged;
+
+        public string OriginIP => _originIP;
+        public string From => _from;
+        public List<string> To => _to;
+        public string Subject => _subject;
+        public List<string> CarbonCopy => _carbonCopy;
+        public string Body => _body;
+        public DateTime Date => _date;
+        public bool IsFlagged => _isFlagged;
 
         public Message(string originIP, string from, List<string> to, string body, DateTime date, string subject = null, List<string> carbonCopy = null, bool isFlagged = false)
         {
-            OriginIP = originIP;
-            From = from;
-            To = to;
-            Body = body;
-            Date = date;
-            Subject = subject;
-            CarbonCopy = carbonCopy != null ? carbonCopy : new List<string>();
-            IsFlagged = isFlagged;
+            this._originIP = originIP;
+            this._from = from;
+            this._to = to;
+            this._body = body;
+            this._date = date;
+            this._subject = subject;
+            this._carbonCopy = carbonCopy != null ? carbonCopy : new List<string>();
+            this._isFlagged = isFlagged;
+        }
+
+        public void ToggleFlagged()
+        {
+            this._isFlagged = !IsFlagged;
         }
     }
 }

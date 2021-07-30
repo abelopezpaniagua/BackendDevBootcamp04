@@ -6,61 +6,41 @@ using System.Threading.Tasks;
 
 namespace OutlookClientExercise
 {
-    public class SMPTServer : IDisposable
+    public class SMPTServer
     {
         private string _description;
         private string _serverName;
         private int? _port;
-        private string _username;
-        private string _password;
+        private List<MailAccount> _mailAccounts;
 
-        public SMPTServer(string description, string serverName, string username, string password, int port = 537)
+        public string ServerName => _serverName;
+        public int? Port => _port;
+
+        public SMPTServer(string description, string serverName, List<MailAccount> mailAccounts, int port = 537)
         {
             this._description = description;
             this._serverName = serverName;
             this._port = port;
-            this._username = username;
-            this._password = password;
 
-            this.Connect();
+            _mailAccounts = mailAccounts;
         }
 
-        private void Connect()
+        public MailAccount AccessAccount(string username, string password)
         {
-            ConsoleManager.ShowSuccess($"Connected to server: {_serverName} with username: {_username} on port: {_port}");
+            return this._mailAccounts
+                .Find(c => c.Username == username && c.IsCorrectPassword(password));
         }
 
-        private void Disconnect()
-        {
-            ConsoleManager.ShowInfo($"Disconnected from server {_serverName}");
-        }
-
-        public string GetInfo()
-        {
-            return $"Server: {_serverName} \nDescription: {_description} \nPort: {_port}";
-        }
-
-        public bool Update(string description, string serverName, string username, string password, int? port = 537)
+        public bool RegisterAccount(string username, string password)
         {
             try
             {
-                if (string.IsNullOrEmpty(description) || string.IsNullOrWhiteSpace(description))
-                    throw new ArgumentException("description must not be empty or null");
+                if (this._mailAccounts.Exists(ma => ma.Username.ToUpper() == username.ToUpper()))
+                    throw new Exception("That username, already exists!.");
 
-                if (string.IsNullOrEmpty(serverName) || string.IsNullOrWhiteSpace(serverName))
-                    throw new ArgumentException("server name must not be empty or null");
+                MailAccount newMailAccount = new(username, password);
 
-                if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(username))
-                    throw new ArgumentException("username must not be empty or null");
-
-                if (string.IsNullOrEmpty(password) || string.IsNullOrWhiteSpace(password))
-                    throw new ArgumentException("password must not be empty or null");
-
-                this._description = description;
-                this._serverName = serverName;
-                this._port = port;
-                this._username = username;
-                this._password = password;
+                this._mailAccounts.Add(newMailAccount);
 
                 return true;
             }
@@ -71,9 +51,72 @@ namespace OutlookClientExercise
             }
         }
 
-        public void Dispose()
+        public string GetInfo()
         {
-            this.Disconnect();
+            return $"Server: {_serverName} \nDescription: {_description} \nPort: {_port}";
+        }
+
+        public bool Update(string description, string serverName, int? port = 537)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(description) || string.IsNullOrWhiteSpace(description))
+                    throw new ArgumentException("description must not be empty or null");
+
+                if (string.IsNullOrEmpty(serverName) || string.IsNullOrWhiteSpace(serverName))
+                    throw new ArgumentException("server name must not be empty or null");
+
+                this._description = description;
+                this._serverName = serverName;
+                this._port = port;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ConsoleManager.ShowError(ex.Message);
+                return false;
+            }
+        }
+
+        public bool ProcessMessage(Message message)
+        {
+            try
+            {
+                var originAccount = this._mailAccounts.Where(ma => ma.Username == message.From).FirstOrDefault();
+
+                originAccount?.Folders
+                    .Where(f => f.Name == Folder.SendedFolderName)
+                    .FirstOrDefault()?
+                    .AddMessage(message);
+
+                foreach (var email in message.To)
+                {
+                    var targetAccount = this._mailAccounts.Where(ma => ma.Username == email).FirstOrDefault();
+
+                    targetAccount?.Folders
+                        .Where(f => f.Name == Folder.InboxFolderName)
+                        .FirstOrDefault()?
+                        .AddMessage(message);
+                }
+
+                foreach (var email in message.CarbonCopy)
+                {
+                    var targetAccount = this._mailAccounts.Where(ma => ma.Username == email).FirstOrDefault();
+
+                    targetAccount?.Folders
+                        .Where(f => f.Name == Folder.InboxFolderName)
+                        .FirstOrDefault()?
+                        .AddMessage(message);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ConsoleManager.ShowError(ex.Message);
+                return false;
+            }
         }
     }
 }
