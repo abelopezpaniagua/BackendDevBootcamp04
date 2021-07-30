@@ -5,25 +5,8 @@ namespace OutlookClientExercise
 {
     class Program
     {
-        //public static List<string> dummyEmails = new List<string>()
-        //{
-        //    "dummy.one@mail.com",
-        //    "dummy.fantastic@mail.com",
-        //    "dummy.two@mail.com",
-        //    "dummy.three@mail.com",
-        //    "dummy.four@mail.com",
-        //    "dummy.five@mail.com",
-        //    "dummy.six@mail.com",
-        //    "dummy.seven@mail.com",
-        //    "dummy.fantasy@mail.com",
-        //    "dummy.horrible@mail.com",
-        //};
-
         public static SMPTServer mailServer = new SMPTServer("Default SMTP Server", "DefaultServer", new()
         {
-            //new("juan.gonzales@mail.com", "juan123", new MessagesMock("juan.gonzales@mail.com", dummyEmails, dummyEmails, 5)),
-            //new("pedro.almaraz@mail.com", "pedro123", new MessagesMock("pedro.almaraz@mail.com", dummyEmails, dummyEmails, 3)),
-            //new("abel.lopez@mail.com", "abel123", new MessagesMock("abel.lopez@mail.com", dummyEmails, dummyEmails, 6))
             new("juan.gonzales@mail.com", "juan123"),
             new("pedro.almaraz@mail.com", "pedro123"),
             new("abel.lopez@mail.com", "abel123")

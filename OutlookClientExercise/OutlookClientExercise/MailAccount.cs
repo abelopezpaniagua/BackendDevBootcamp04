@@ -24,21 +24,6 @@ namespace OutlookClientExercise
             InitializeDefaultFolders();
         }
 
-        public MailAccount(string username, string password, MessagesMock messagesMock)
-        {
-            _username = username;
-            _password = password;
-
-            InitializeDefaultFolders();
-
-            var mockMessagesGenerated = messagesMock.GetMockMessages();
-
-            foreach (var message in mockMessagesGenerated)
-            {
-                this._folders.Find(f => f.Name == Folder.SendedFolderName).AddMessage(message);
-            }
-        }
-
         private void InitializeDefaultFolders()
         {
             var inboxFolder = new Folder(Folder.InboxFolderName, true);
