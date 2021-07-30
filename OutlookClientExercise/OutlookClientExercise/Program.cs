@@ -6,12 +6,16 @@ namespace OutlookClientExercise
 {
     class Program
     {
+        #region SMTP Server Initialization
         public static SMPTServer mailServer = new SMPTServer("Default SMTP Server", "DefaultServer", new()
         {
             new("juan.gonzales@mail.com", "juan123"),
             new("pedro.almaraz@mail.com", "pedro123"),
-            new("abel.lopez@mail.com", "abel123")
+            new("abel.lopez@mail.com", "abel123"),
+            new("maria.cartagena@mail.com", "maria123"),
+            new("gonzalo.lema@mail.com", "gonzalo123")
         });
+        #endregion
 
         #region Main Program
 
@@ -196,8 +200,8 @@ namespace OutlookClientExercise
 
             do
             {
-                string menuInfo = $"Menu - Folder: {folder.Name} \n1.Rename Folder \n2.Remove Folder \n3.List Messages \n4.Manage Rules" +
-                    "\n5.Back \nPlease select an option";
+                string menuInfo = $"Menu - Folder: {folder.Name} \n1.Rename Folder \n2.Remove Folder \n3.List Messages \n4.Manage Active Rules" +
+                    "\n5.Add Rule \n6.Back \nPlease select an option";
 
                 folderActionChoice = ConsoleManager.GetUserInputWithPreInformation<FolderActionChoice>(menuInfo);
 
@@ -259,7 +263,7 @@ namespace OutlookClientExercise
                         ConsoleManager.ShowInfo("Active Rules: ");
                         for (int i = 0; i < currentRules.Count; i++)
                         {
-                            ConsoleManager.Show($"Rule {i}");
+                            ConsoleManager.Show($"{i + 1}: {currentRules[i].Name} -> {currentRules[i].Description}");
                         }
 
                         ConsoleManager.ShowInfo($"Select a Rule (1 - {currentRules.Count}) or -1 for Cancel");
@@ -272,11 +276,33 @@ namespace OutlookClientExercise
 
                         var selectedRule = currentRules[selectRuleOption - 1];
 
-                        ShowRuleSubmenu(client, folder, selectedRule);
+                        ShowRuleSubmenu(folder, selectedRule);
 
                         break;
 
                     case FolderActionChoice.AddRule:
+
+                        var availableRules = folder.GetAvailableRules();
+
+                        ConsoleManager.ShowInfo("Available Rules: ");
+                        for (int i = 0; i < availableRules.Count; i++)
+                        {
+                            ConsoleManager.Show($"{i + 1}: {availableRules[i].Name} -> {availableRules[i].Description}");
+                        }
+
+                        ConsoleManager.ShowInfo($"Select a Rule (1 - {availableRules.Count}) or -1 for Cancel");
+                        var selectAvailableRuleOption = ConsoleManager.GetUserInput<int>();
+                        if (selectAvailableRuleOption == -1)
+                        {
+                            Console.Clear();
+                            break;
+                        }
+
+                        var selectedAvailableRule = availableRules[selectAvailableRuleOption - 1];
+
+                        folder.AddActiveRule(selectedAvailableRule);
+
+                        ConsoleManager.ShowSuccess("Rule added successfully!");
 
                         break;
 
@@ -293,8 +319,6 @@ namespace OutlookClientExercise
         }
 
         #endregion
-
-
 
         #region Message Submenu
         public static void ShowMessageSubmenu(SMPTClient client, Folder folder, Message message)
@@ -370,7 +394,7 @@ namespace OutlookClientExercise
 
                         var selectedFolder = foldersSelection[selectFolderOption - 1];
 
-                        if (folder.MoveMessage(message, selectedFolder))
+                        if (folder.MoveMessage(client.CurrentConnectedAccount, message, selectedFolder))
                         {
                             ConsoleManager.ShowSuccess($"Message moved to: {selectedFolder.Name} successfully!");
                         }
@@ -395,9 +419,35 @@ namespace OutlookClientExercise
         #endregion
 
         #region Rule Submenu
-        public static void ShowRuleSubmenu(SMPTClient client, Folder folder, FolderRule folderRule)
+        public static void ShowRuleSubmenu(Folder folder, FolderRule folderRule)
         {
+            RuleActionChoice ruleActionChoice;
 
+            do
+            {
+                string menuInfo = $"Menu - Rule: {folderRule.Name} \n1.Remove Rule \n2.Back \nPlease select an option";
+
+                ruleActionChoice = ConsoleManager.GetUserInputWithPreInformation<RuleActionChoice>(menuInfo);
+
+                switch (ruleActionChoice)
+                {
+                    case RuleActionChoice.RemoveRule:
+
+                        folder.RemoveActiveRule(folderRule);
+
+                        ConsoleManager.ShowSuccess("Rule removed successfully!");
+
+                        break;
+                    case RuleActionChoice.Back:
+                        
+                        ConsoleManager.ShowInfo("Returning to folder...");
+
+                        break;
+                    default:
+                        break;
+                }
+
+            } while (ruleActionChoice != RuleActionChoice.Back);
         }
 
         #endregion
@@ -473,8 +523,11 @@ namespace OutlookClientExercise
             Back = 5
         }
 
-
-        //TODO: Manage RULES ENUM
+        public enum RuleActionChoice
+        {
+            RemoveRule = 1,
+            Back = 2
+        }
         #endregion
     }
 }

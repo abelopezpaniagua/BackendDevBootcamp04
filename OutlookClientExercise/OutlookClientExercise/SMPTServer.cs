@@ -89,7 +89,7 @@ namespace OutlookClientExercise
                 originAccount?.Folders
                     .Where(f => f.Name == Folder.SendedFolderName)
                     .FirstOrDefault()?
-                    .AddMessage(message, MessageAction.MessageSended);
+                    .AddMessage(originAccount, message, MessageAction.MessageSended);
 
                 foreach (var email in message.To)
                 {
@@ -98,7 +98,7 @@ namespace OutlookClientExercise
                     targetAccount?.Folders
                         .Where(f => f.Name == Folder.InboxFolderName)
                         .FirstOrDefault()?
-                        .AddMessage(message, MessageAction.MessageReceived);
+                        .AddMessage(targetAccount, (Message)message.Clone(), MessageAction.MessageReceived);
                 }
 
                 foreach (var email in message.CarbonCopy)
@@ -108,7 +108,7 @@ namespace OutlookClientExercise
                     targetAccount?.Folders
                         .Where(f => f.Name == Folder.InboxFolderName)
                         .FirstOrDefault()?
-                        .AddMessage(message, MessageAction.MessageReceived);
+                        .AddMessage(targetAccount, (Message)message.Clone(), MessageAction.MessageReceived);
                 }
 
                 return true;
@@ -125,6 +125,7 @@ namespace OutlookClientExercise
     {
         MessageSended,
         MessageReceived,
-        MessageMoved
+        MessageMoved,
+        MessageCopied
     }
 }

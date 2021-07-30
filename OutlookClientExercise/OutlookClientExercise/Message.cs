@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OutlookClientExercise
 {
-    public class Message
+    public class Message : ICloneable
     {
         private string _originIP;
         private string _from;
@@ -41,6 +41,11 @@ namespace OutlookClientExercise
         public void ToggleFlagged()
         {
             this._isFlagged = !IsFlagged;
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }
