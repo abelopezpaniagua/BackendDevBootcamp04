@@ -1,0 +1,16 @@
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\bin\Debug\net5.0\FactoryMethodExercise.exe
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\bin\Debug\net5.0\FactoryMethodExercise.deps.json
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\bin\Debug\net5.0\FactoryMethodExercise.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\bin\Debug\net5.0\FactoryMethodExercise.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\bin\Debug\net5.0\FactoryMethodExercise.dll
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\bin\Debug\net5.0\ref\FactoryMethodExercise.dll
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\bin\Debug\net5.0\FactoryMethodExercise.pdb
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\obj\Debug\net5.0\FactoryMethodExercise.csproj.AssemblyReference.cache
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\obj\Debug\net5.0\FactoryMethodExercise.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\obj\Debug\net5.0\FactoryMethodExercise.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\obj\Debug\net5.0\FactoryMethodExercise.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\obj\Debug\net5.0\FactoryMethodExercise.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\obj\Debug\net5.0\FactoryMethodExercise.dll
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\obj\Debug\net5.0\ref\FactoryMethodExercise.dll
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\obj\Debug\net5.0\FactoryMethodExercise.pdb
+C:\netProjects\BackendDevBootcamp04\FactoryMethodExercise\FactoryMethodExercise\obj\Debug\net5.0\FactoryMethodExercise.genruntimeconfig.cache
