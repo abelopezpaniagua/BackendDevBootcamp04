@@ -1,0 +1,16 @@
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\bin\Debug\net5.0\CompositePatternExample.exe
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\bin\Debug\net5.0\CompositePatternExample.deps.json
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\bin\Debug\net5.0\CompositePatternExample.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\bin\Debug\net5.0\CompositePatternExample.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\bin\Debug\net5.0\CompositePatternExample.dll
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\bin\Debug\net5.0\ref\CompositePatternExample.dll
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\bin\Debug\net5.0\CompositePatternExample.pdb
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\obj\Debug\net5.0\CompositePatternExample.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\obj\Debug\net5.0\CompositePatternExample.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\obj\Debug\net5.0\CompositePatternExample.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\obj\Debug\net5.0\CompositePatternExample.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\obj\Debug\net5.0\CompositePatternExample.dll
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\obj\Debug\net5.0\ref\CompositePatternExample.dll
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\obj\Debug\net5.0\CompositePatternExample.pdb
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\obj\Debug\net5.0\CompositePatternExample.genruntimeconfig.cache
+C:\netProjects\BackendDevBootcamp04\CompositePatternExample\CompositePatternExample\obj\Debug\net5.0\CompositePatternExample.csproj.AssemblyReference.cache
