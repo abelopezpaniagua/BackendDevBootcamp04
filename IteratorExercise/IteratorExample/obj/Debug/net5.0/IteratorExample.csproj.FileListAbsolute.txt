@@ -1,0 +1,16 @@
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\bin\Debug\net5.0\IteratorExample.exe
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\bin\Debug\net5.0\IteratorExample.deps.json
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\bin\Debug\net5.0\IteratorExample.runtimeconfig.json
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\bin\Debug\net5.0\IteratorExample.runtimeconfig.dev.json
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\bin\Debug\net5.0\IteratorExample.dll
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\bin\Debug\net5.0\ref\IteratorExample.dll
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\bin\Debug\net5.0\IteratorExample.pdb
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\obj\Debug\net5.0\IteratorExample.csproj.AssemblyReference.cache
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\obj\Debug\net5.0\IteratorExample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\obj\Debug\net5.0\IteratorExample.AssemblyInfoInputs.cache
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\obj\Debug\net5.0\IteratorExample.AssemblyInfo.cs
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\obj\Debug\net5.0\IteratorExample.csproj.CoreCompileInputs.cache
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\obj\Debug\net5.0\IteratorExample.dll
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\obj\Debug\net5.0\ref\IteratorExample.dll
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\obj\Debug\net5.0\IteratorExample.pdb
+C:\Users\TOPEX\source\repos\IteratorExample\IteratorExample\obj\Debug\net5.0\IteratorExample.genruntimeconfig.cache
