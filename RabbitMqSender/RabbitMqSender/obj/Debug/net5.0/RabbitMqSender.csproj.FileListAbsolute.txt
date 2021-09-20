@@ -1,0 +1,17 @@
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\bin\Debug\net5.0\RabbitMqSender.exe
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\bin\Debug\net5.0\RabbitMqSender.deps.json
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\bin\Debug\net5.0\RabbitMqSender.runtimeconfig.json
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\bin\Debug\net5.0\RabbitMqSender.runtimeconfig.dev.json
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\bin\Debug\net5.0\RabbitMqSender.dll
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\bin\Debug\net5.0\ref\RabbitMqSender.dll
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\bin\Debug\net5.0\RabbitMqSender.pdb
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\bin\Debug\net5.0\RabbitMQ.Client.dll
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\obj\Debug\net5.0\RabbitMqSender.GeneratedMSBuildEditorConfig.editorconfig
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\obj\Debug\net5.0\RabbitMqSender.AssemblyInfoInputs.cache
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\obj\Debug\net5.0\RabbitMqSender.AssemblyInfo.cs
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\obj\Debug\net5.0\RabbitMqSender.csproj.CoreCompileInputs.cache
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\obj\Debug\net5.0\RabbitMqSender.csproj.CopyComplete
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\obj\Debug\net5.0\RabbitMqSender.dll
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\obj\Debug\net5.0\ref\RabbitMqSender.dll
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\obj\Debug\net5.0\RabbitMqSender.pdb
+C:\netProjects\BackendDevBootcamp04\RabbitMqSender\RabbitMqSender\obj\Debug\net5.0\RabbitMqSender.genruntimeconfig.cache

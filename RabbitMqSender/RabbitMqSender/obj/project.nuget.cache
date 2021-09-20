@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "lVOpM/jEjKIsQpQEoaK9ekCWJ8+t+V2SaAfyVMMf4sKu5srcXPn39OTdRZIBoLxIPS6sLsbdgTOnDmgBJySiVg==",
+  "success": true,
+  "projectFilePath": "C:\\netProjects\\BackendDevBootcamp04\\RabbitMqSender\\RabbitMqSender\\RabbitMqSender.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TOPEX\\.nuget\\packages\\rabbitmq.client\\6.2.2\\rabbitmq.client.6.2.2.nupkg.sha512",
+    "C:\\Users\\TOPEX\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\TOPEX\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
