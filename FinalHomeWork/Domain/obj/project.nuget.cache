@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "5x/pdpJYO7nYO2Jol5z742lgv4wfuNanC1uuCV/4Ld+pivcKlaTPotBEWZjzBmEG92zP16i46auV9T1jgVyrMQ==",
+  "success": true,
+  "projectFilePath": "C:\\netProjects\\BackendDevBootcamp04\\FinalHomeWork\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TOPEX\\.nuget\\packages\\mongodb.bson\\2.13.1\\mongodb.bson.2.13.1.nupkg.sha512",
+    "C:\\Users\\TOPEX\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
